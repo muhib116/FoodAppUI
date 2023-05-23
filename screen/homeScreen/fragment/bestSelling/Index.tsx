@@ -6,13 +6,13 @@ import colors from '../../../../assets/helper/colors'
 import BestSellingItem from './BestSellingItem'
 import exploreData from '../../../../assets/data/explore'
 
-export default function BestSelling({navigation}) {
+export default function BestSelling() {
   return (
     <View style={ styles.wrapper }>
       <Text style={ styles.title }>Best Selling</Text>
       <FlatList
         data={ exploreData }
-        renderItem={({item}) => <BestSellingItem item={ item } navigation={navigation} />}
+        renderItem={({item}) => <BestSellingItem item={ item } />}
       />
     </View>
   )

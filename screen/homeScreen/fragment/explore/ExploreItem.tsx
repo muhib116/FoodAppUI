@@ -1,14 +1,16 @@
 /*eslint-disable*/
 
-import { View, Text, StyleSheet, Image, Button, Dimensions, useWindowDimensions, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, useWindowDimensions, TouchableOpacity, TouchableWithoutFeedback } from 'react-native'
 import React from 'react'
 import colors from '../../../../assets/helper/colors'
+import { useNavigation } from '@react-navigation/native'
 
 
-export default function ExploreItem({item, navigation}) {
+export default function ExploreItem({item}) {
+    const navigation = useNavigation()
     const styles = useStyles()
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Details', item)}>
+    <TouchableWithoutFeedback onPress={() => navigation.navigate('Details', item)}>
         <View style={ styles.itemsWrapper }>
             <View style={styles.imageWrapper}>
                 <Image source={item.image} style={styles.image} />
@@ -30,7 +32,7 @@ export default function ExploreItem({item, navigation}) {
                 </TouchableOpacity>
             </View>
         </View>
-    </TouchableOpacity>
+    </TouchableWithoutFeedback>
   )
 }
 

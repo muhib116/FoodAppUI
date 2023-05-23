@@ -6,7 +6,7 @@ import colors from '../../../../assets/helper/colors'
 import ExploreItem from './ExploreItem'
 import exploreData from '../../../../assets/data/explore'
 
-export default function Explore({navigation}) {
+export default function Explore() {
   return (
     <View style={ styles.wrapper }>
       <Text style={ styles.title }>Explore</Text>
@@ -16,7 +16,7 @@ export default function Explore({navigation}) {
         showsHorizontalScrollIndicator={false}
         data={exploreData}
         renderItem={({item}) => (
-          <ExploreItem item={item} key={item.id} navigation={navigation} />
+          <ExploreItem item={item} key={item.id} />
         )}
       />
     </View>

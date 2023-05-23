@@ -28,7 +28,13 @@ function App(){
               headerShown: false
             }}
           />
-          <Stack.Screen name="Details" component={ productDetails } />
+          <Stack.Screen 
+            name="Details" 
+            component={ productDetails }
+            options={{ 
+              headerShown: false
+             }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
   );

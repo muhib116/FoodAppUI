@@ -1,14 +1,16 @@
 /*eslint-disable*/
 
-import { View, Text, StyleSheet, Image, useWindowDimensions, Button, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, useWindowDimensions, Button, TouchableOpacity, TouchableWithoutFeedback } from 'react-native'
 import React from 'react'
 import colors from '../../../../assets/helper/colors'
 import ArrowRightIcon from '../../../../assets/svg/ArrowRightIcon'
+import { useNavigation } from '@react-navigation/native'
 
-export default function BestSellingItem({item, navigation}) {
+export default function BestSellingItem({item}) {
     const styles = useStyle()
+    const navigation = useNavigation()
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Details', item)}>
+    <TouchableWithoutFeedback onPress={() => navigation.navigate('Details', item)}>
         <View style={ styles.wrapper } accessibilityRole='button' >
             <View style={styles.imageWrapper}>
                 <Image source={ item.image } style={ styles.image } />
@@ -26,7 +28,7 @@ export default function BestSellingItem({item, navigation}) {
                 <ArrowRightIcon width={15} height={15} />
             </View>
         </View>
-    </TouchableOpacity>
+    </TouchableWithoutFeedback>
   )
 }
 

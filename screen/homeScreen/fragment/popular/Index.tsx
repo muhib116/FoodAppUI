@@ -7,7 +7,7 @@ import PopularItem from './PopularItem'
 import exploreData from '../../../../assets/data/explore'
 
 
-export default function Explore({navigation}) {
+export default function Explore() {
   const styles = useStyle()
   const { width } = useWindowDimensions()
 
@@ -28,7 +28,7 @@ export default function Explore({navigation}) {
           showsHorizontalScrollIndicator={false}
           data={exploreData}
           renderItem={({item, index}) => {
-            return <PopularItem item={item} navigation={navigation} />
+            return <PopularItem item={item} />
           }}
         /> :
 
@@ -39,7 +39,7 @@ export default function Explore({navigation}) {
           showsHorizontalScrollIndicator={false}
           data={exploreData}
           renderItem={({item, index}) => {
-            return <PopularItem item={item} navigation={navigation} />
+            return <PopularItem item={item} />
           }}
         />
       }
